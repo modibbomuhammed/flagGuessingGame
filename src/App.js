@@ -16,7 +16,7 @@ function App() {
     }
     getCountries()
   }, []);
-  console.log({ state })
+
   return (
     <div className="flag-app">
       <header className='title-header' style={{ backgroundImage: `url(${worldImg})` }}>

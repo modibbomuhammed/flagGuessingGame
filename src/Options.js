@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Options = ({ countriesOptions }) => {
+const Options = ({ countriesOptions, checkAnswer }) => {
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleOptionChange = (e) => {
@@ -8,6 +8,7 @@ const Options = ({ countriesOptions }) => {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
+        checkAnswer(selectedOption);
         console.log('Selected option:', selectedOption);
     };
 
