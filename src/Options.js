@@ -11,23 +11,25 @@ const Options = ({ countriesOptions }) => {
         console.log('Selected option:', selectedOption);
     };
 
+
     return (
         <form onSubmit={handleSubmit}>
-            <div style={{ display: 'flex' }}>
-                hello
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5px' }}>
                 {countriesOptions.length && countriesOptions.map(({ name: { common } }, index) => {
-                    <label key={index} style={{ transform: `rotate(${index * 45}deg)` }}>
-                        <input
-                            type="radio"
-                            value={common}
-                            checked={selectedOption === common}
-                            onChange={handleOptionChange}
-                        />
-                        {common}
-                    </label>
+                    return (
+                        <label key={index} style={{ marginLeft: `${index * 45}px` }}>
+                            <input
+                                type="radio"
+                                value={common}
+                                checked={selectedOption === common}
+                                onChange={handleOptionChange}
+                            />
+                            {common}
+                        </label>
+                    )
                 })}
+                <button type="submit" style={{ marginLeft: "55px" }}>Guess</button>
             </div>
-            <button type="submit">Submit</button>
         </form>
     )
 }
