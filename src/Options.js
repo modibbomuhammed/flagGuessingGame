@@ -9,10 +9,8 @@ const Options = ({ countriesOptions, checkAnswer }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         checkAnswer(selectedOption);
-        console.log('Selected option:', selectedOption);
     };
 
-    console.log({ countriesOptions, checkAnswer })
     return (
         <form onSubmit={handleSubmit}>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5px' }}>
