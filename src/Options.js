@@ -12,7 +12,7 @@ const Options = ({ countriesOptions, checkAnswer }) => {
         console.log('Selected option:', selectedOption);
     };
 
-
+    console.log({ countriesOptions, checkAnswer })
     return (
         <form onSubmit={handleSubmit}>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '5px' }}>

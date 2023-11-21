@@ -9,6 +9,14 @@ const CountryGuess = ({ countries }) => {
     const [checking, setChecking] = useState(false);
     const [currentGuess, setCurrentGuess] = useState('');
 
+    useEffect(() => {
+        makeSelection();
+    }, [countries]);
+
+    useEffect(() => {
+        chooseCountry();
+    }, [selectedCountries]);
+
     const makeSelection = () => {
         const selected = [];
         if (countries.length) {
@@ -17,13 +25,12 @@ const CountryGuess = ({ countries }) => {
                 selected.push(randomCountry);
             }
             setselectedCountries(selected);
-            setselectedCountry(selectedCountries[Math.floor(Math.random() * 4)]);
         }
     }
 
-    useEffect(() => {
-        makeSelection();
-    }, [countries]);
+    const chooseCountry = () => {
+        setselectedCountry(selectedCountries[Math.floor(Math.random() * 4)]);
+    };
 
     const checkAnswer = (guess) => {
         setChecking(!checking);
@@ -34,6 +41,7 @@ const CountryGuess = ({ countries }) => {
         setChecking(!checking);
         makeSelection();
     }
+
 
     return (
         <>
